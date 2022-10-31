@@ -30,7 +30,7 @@ func RandomString(n int) string {
 }
 
 func RandomOwner() string {
-	return fmt.Sprintf("%s@%s", RandomString(6), time.Now().Unix())
+	return fmt.Sprintf("%s@%s", RandomString(6), time.Now())
 }
 
 func RandomMoney() int64 {
