@@ -28,7 +28,10 @@ test:
 server:
 	go run main.go
 
+dev:
+	nodemon --exec go run main.go --signal SIGTERM
+
 mock:
 	mockgen -build_flags=--mod=mod -package mockdb -destination db/mock/store.go github.com/muchamadagush/simplebank/db/sqlc Store
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock migrateup1 migratedown1
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock migrateup1 migratedown1 dev
